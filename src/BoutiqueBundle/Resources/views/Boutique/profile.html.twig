@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+<div class="main-content">
+    <header class="custom-banner">
+        <div class="container-fluid">
+            <div class="row gutters">
+                <div class="col-xl-7 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="welcome-msg">
+                        <div class="welcome-user-thumb">
+                            <img src="{{ asset('admin/img/user2.png') }}" alt='Fixit Admin' />
+                        </div>
+                        <div class="welcome-title">
+                            Hello, <span>Admin</span>
+                        </div>
+                        <div class="welcome-designation">
+                            Welcome to Fixit Responsive Admin Template.
+                        </div>
+                        <a href="dashboard2.html" class="btn btn-danger btn-sm">Analytics</a>
+                    </div>
+                </div>
+                <div class="col-xl-5 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="row gutters user-plans justify-content-sm-center">
+                        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-4">
+                            <div id="sales"></div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-4">
+                            <div id="expenses"></div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-3 col-sm-3 col-4">
+                            <div id="profit"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+{% endblock %}

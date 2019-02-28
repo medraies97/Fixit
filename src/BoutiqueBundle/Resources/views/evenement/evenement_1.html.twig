@@ -1,0 +1,56 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+
+    <!--Page Cover-->
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>événement</h2>
+                <ol class="breadcrumb">
+                    <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                    <li class="active">Événement</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <!--our project-->
+    <section class="row sectpad">
+        <div class="container">
+            <div class="row m0 section_header projects-title">
+                <h2>Nos Événement</h2>
+                <h5>We build Amazing Websites</h5>
+                <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+            </div>
+        </div>
+    </section>
+
+    <!--project protfolio-->
+    <section class="row projects-area">
+        <div class="container">
+            <div class="row project_type1">
+                {% for v in evenement %}
+                <div class="col-sm-4 project">
+                    <div class="item">
+                        <img src="{{ asset('Uploads/images/' ~ v.image ) }}" width="500px" height="250px">
+                        <div class="inner">
+                            <div class="search-icon">
+                                <a class="test-popup-link" href="http://galaxyanalytics.net/demos/handyman/images/protfolio/protfolio1.jpg"><i class="icon icon-Search"></i></a>
+                                <a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><i class="fa fa-link"></i></a>
+                            </div>
+                            <p>{{v.description_ev}}</p>
+                        </div>
+                        <div class="item-txt">
+                            <a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><td>{{v.intitulee_ev}}</td></a>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            <div class="row m0 load-button">
+                <a href="#">Load more +</a>
+            </div>
+        </div>
+    </section>
+{% endblock %}

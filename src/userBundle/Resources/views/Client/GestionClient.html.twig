@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="main-content">
+<div class="table-users">
+    <div class="header"><h4 style="font-weight: bold; color: #8e0a0a"><center>Liste des clients</center></h4></div>
+        <table id="datatable" class="table table-striped table-bordered">
+            <thead>
+
+        <th>Nom client</th>
+        <th>Prénom client</th>
+        <th>Nom Utilisateur</th>
+        <th>Email</th>
+        <th>Numero de telephone</th>
+        <th>Mise à jour</th>
+        <th>Supprimer Client</th>
+        <th>Nombre d'avertissements</th>
+        <th>avertir</th>
+            </thead>
+        {% for user in client %}
+            <tr>
+
+                <td>{{ user.nom }}</td>
+                <td>{{ user.prenom }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.tel }}</td>
+                <td><a href="{{ path('MAJ_Client',{'id':user.id }) }}" >Update</a></td>
+                <td><a href="{{ path('supprimer_Client',{'id':user.id })}}" >Delete</a></td>
+                <td>{{ user.nombreAvertissements }}</td>
+                <td><a href="{{ path('Ajout_Avertissement',{'id':user.id }) }}" >avertir</a></td>
+
+
+            </tr>
+        {% endfor %}
+
+    </table>
+</div>
+</div>
+
+
+{% endblock %}

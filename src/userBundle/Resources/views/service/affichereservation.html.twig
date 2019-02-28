@@ -1,0 +1,73 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+
+
+            <div class="card">
+                <div class="card-header">liste des reservations</div>
+                <div class="card-body">
+
+                    <!--*************************
+                    *************************
+                    *************************
+                    Basic Table start
+                    *************************
+                    *************************
+                    *************************-->
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                            <tr>
+                                <th>idReservation</th>
+                                <th>nom</th>
+                                <th>prenom</th>
+                                <th>adresse</th>
+                                <th>Service reservé</th>
+                                <th>dateReservation</th>
+                                <th>nombreheureestimee</th>
+                                <th>ouvrier reservé</th>
+                                <th>status</th>
+                                <th>Suppression</th>
+                                <th>Modification</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                {% for m in reservations %}
+                            <tr>
+                                <td>{{ m.id }} </td>
+                                <td>{{ m.nom }} </td>
+                                <td>{{ m.prenom }} </td>
+                                <td>{{ m.adresse }} </td>
+
+                                <td>    <output name="result">{{ m.Service}} </output> </td>
+                                <td>{{ m.dateReservation|date('y-m-d') }}</td>
+                                <td>{{ m.nombreheureestimee }} </td>
+                                <td>{{ m.User }} </td>
+                                <td>{{ m.status }} </td>
+
+                                <td>  <button type="button" class="btn btn-danger btn-sm"><a href="{{ path('home_effacerReservation',{'id':m.id})}}" >supprimer</a><i class="icon icon-trash"></i></button>   </td>
+                                <td>  <button type="button" class="btn btn-success btn-rounded"><a href="{{ path('home_modifierReservation',{'id':m.id})}}" >modifier</a><i class="icon icon-trash"></i></button>   </td>
+
+                                {% endfor %}
+                        </table>
+                    </div>
+                    <!--*************************
+                    *************************
+                    *************************
+                    Basic Table end
+                    *************************
+                    *************************
+                    *************************-->
+
+                </div>
+            </div>
+        </tr>
+        </tr>
+
+        </thead>
+
+    </table>
+
+{% endblock %}

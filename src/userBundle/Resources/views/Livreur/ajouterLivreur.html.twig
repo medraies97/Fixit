@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+{{ form_start(f) }}
+
+    <!-- Card starts -->
+    <div class="card">
+        <div class="card-body">
+
+            <!--*************************
+            *************************
+            *************************
+             Contact Form Start
+            *************************
+            *************************
+            *************************-->
+
+
+
+            <!-- Row start -->
+            <div class="row justify-content-center gutters">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                        <div class="form-block">
+                            <div class="form-block-header">
+                                <h5>Ajouter un livreur</h5>
+
+                            </div>
+                            <div class="form-block-body">
+                                <div class="form-group">
+                                  {{ form_widget(f.nom ,{'attr':{'class':'form-control' , 'placeholder':'Nom'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                  {{ form_widget(f.prenom ,{'attr':{'class':'form-control' ,'placeholder':'Prénom'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.username ,{'attr':{'class':'form-control','Placeholder':'Login' }}) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.tel ,{'attr':{'class':'form-control' ,'Placeholder':'Téléphone'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.email ,{'attr':{'class':'form-control','Placeholder':'Email' }}) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.adresse ,{'attr':{'class':'form-control'}}) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.plainPassword.first ,{'attr':{'class':'form-control' ,'Placeholder':'Mot de Passe'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.plainPassword.second ,{'attr':{'class':'form-control','Placeholder':'Confirmer mot de passe' }}) }}
+                                </div>
+
+
+
+
+                                <input type="submit" value="Ajouter"  class="btn btn-primary pull-right">
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <!-- Row end -->
+
+
+
+            <!--*************************
+            *************************
+            *************************
+             Contact Form End
+            *************************
+            *************************
+            *************************-->
+
+        </div>
+
+    </div>
+
+{{ form_end(f) }}
+{% endblock %}
+

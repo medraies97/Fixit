@@ -1,0 +1,110 @@
+{% extends 'baseClient.html.twig' %}
+{% block content %}
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Reserver</h2>
+                <ol class="breadcrumb">
+                    <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                    <li class="services.html">Reserver</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="row touch">
+        <div class="sectpad touch_bg">
+            <div class="container">
+                <div class="row m0 section_header">
+                    <h2>Reserver rapidement</h2>
+                    <h5>Nous sommes disponibles pour votre aide</h5>
+                    <p>Si vous souhaitez en savoir plus sur la manière dont nous pouvons aider votre organisation, veuillez renseigner
+                        le formulaire ci-dessous. vous pouvez nous appeler à tout moment entre 8 heures du matin. à 2 P. M. GMT</p>
+                </div>
+                <div class="row m0 touch_top">
+                    <ul class="nav">
+                        <li class="item">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <i class="fa fa-map-marker"></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    Fixit, 562, avenue de liberté <br>
+                                    tunis, Tx 154
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <i class="fa fa-envelope-o"></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    info@fixit.com <br>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="item">
+                            <div class="media">
+                                <div class="media-left">
+                                    <a href="#">
+                                        <i class="fa fa-phone"></i>
+                                    </a>
+                                </div>
+                                <div class="media-body">
+                                    + 216 71000100 <br>
+
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="row touch_middle">
+                    <div class="col-md-8 input_form">
+                        {{ form_start(f) }}
+
+                        <div class="card">
+                            {#<div class="card-title"></div>#}
+                            <div class="card-body">
+                                {#<div class="alert alert-primary" role="alert"></div>#}
+                                <div class="row gutters">
+                                    <div class="col-xl-4 col-lg col-md-4 col-sm-4 col-12">
+
+                                        <div class="form-group">
+
+                                            <label for="example">Date de reservation</label><br>
+                                            {{ form_widget(f.dateReservation , { 'attr': {'class': 'calendar'} }) }}
+                                            <label for="example">nombre d'heure estime</label><br>
+                                            {{ form_widget(f.nombreheureestimee , { 'attr': {'class': 'form-control'} }) }}
+                                            <label for="example">Nom de service</label><br>
+                                            {{ form_widget(f.Service , { 'attr': {'class': 'form-control'} }) }}
+                                        </div>
+                                        <input type="submit" value="envoyer" class="btn btn-primary btn-sm"/>
+                                    </div>
+
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        {{ form_end(f) }}
+
+                    </div>
+
+
+                <!--MapBox-->
+                <div id="mapBox" class="row m0" data-lat="37.3818288" data-lon="-122.0636325" data-zoom="15">
+
+
+                </div>
+            </div>
+        </div>
+
+
+        </div>
+    </section>
+{% endblock %}

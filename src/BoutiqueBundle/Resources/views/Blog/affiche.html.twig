@@ -1,0 +1,19 @@
+
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+    <ul>
+{% for v in commentaires %}
+
+
+  <li>
+      Nom:<b>{{ v.Commentaireuser.username }}</b> <div  style="color: #7a633c;"> {{ v.comment }}</div> Fait le:<i style="color: #7a633c;">{{ v.dateCreationComm| date('Y-m-d H:i:s') }}</i>  <br> <a style="color: black" href="{{ path('supprimer_commentaire',{'id':v.id}) }}">Supprimer</a>-
+            - <a style="color: black" href="{{ path('modifier_commentaire',{'id':v.id}) }}">modifier</a>
+  </li>
+  <hr>
+{% endfor %}
+    </ul>
+    <a href="{{ path('Affiche_Blog') }}" > Back to blog </a>
+   <div align="center" style="font-size: 15px;text-decoration-color: red"> {{ knp_pagination_render(commentaires) }} </div>
+{% endblock %}
+

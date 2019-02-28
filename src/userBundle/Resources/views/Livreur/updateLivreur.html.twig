@@ -1,0 +1,68 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+{{ form_start(f) }}
+
+    <!-- Card starts -->
+    <div class="card">
+        <div class="card-body">
+
+            <!--*************************
+            *************************
+            *************************
+             Contact Form Start
+            *************************
+            *************************
+            *************************-->
+
+
+
+            <!-- Row start -->
+            <div class="row justify-content-center gutters">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                        <div class="form-block">
+                            <div class="form-block-header">
+                                <h5>Ajouter un livreur</h5>
+
+                            </div>
+                            <div class="form-block-body">
+                                <div class="form-group">
+                                  {{ form_widget(f.Nom ,{'attr':{'class':'form-control' , 'placeholder':'Nom'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                  {{ form_widget(f.Prenom ,{'attr':{'class':'form-control' ,'placeholder':'Prénom'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.Tel ,{'attr':{'class':'form-control' ,'Placeholder':'Téléphone'}} ) }}
+                                </div>
+                                <div class="form-group">
+                                    {{ form_widget(f.Email ,{'attr':{'class':'form-control','Placeholder':'Email' }}) }}
+                                </div>
+
+
+                                <input type="submit" value="Ajouter"  class="btn btn-primary pull-right">
+                            </div>
+                        </div>
+
+                </div>
+            </div>
+            <!-- Row end -->
+
+
+
+            <!--*************************
+            *************************
+            *************************
+             Contact Form End
+            *************************
+            *************************
+            *************************-->
+
+        </div>
+
+    </div>
+
+{{ form_end(f) }}
+{% endblock %}
+

@@ -1,0 +1,45 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+    <!DOCTYPE html>
+    <html>
+    <head>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <title></title>
+    </head>
+    <body>
+<form>
+    <p id="demo"></p>
+    <input type="text" id="latitude" hidden="true" >
+    <input type="text" id="longitude" hidden="true"  >
+
+    <a href="" id="a1">supprimer</a>
+</form>
+<script>
+        var x = document.getElementById("demo");
+
+
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        function showPosition(position) {
+            $('#latitude').val(position.coords.latitude);
+            $('#longitude').val(position.coords.longitude);
+            var c = $('#city').html(location.city);
+            var x = $('#latitude').val();
+            var y = $('#longitude').val();
+
+                $("#a1").attr('href', "http://localhost/pi/web/app_dev.php/boutique/trouverLivreur/"+x+"/"+y);
+
+
+        }
+
+
+    </script>
+    </body>
+    </html>
+{% endblock %}
+

@@ -1,0 +1,266 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+
+
+
+<div class="main-content">
+
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Product Details Page</h2>
+                <ol class="breadcrumb">
+                    <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                    <li class="active">Product Details Page</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="row blog_content shop-page">
+        <div class="sidebar_section">
+            <div class="sidebar row m0">
+                <div class="row widget widget-search">
+                    <h4 class="widget-title">Search</h4>
+                    <div class="row widget-inner">
+                        <form action="#" class="search-form" method="get">
+                            <div class="input-group">
+                                <input type="search" class="form-control" placeholder="Enter Search keywords">
+                                <span class="input-group-addon">
+                                <button type="submit"><i class="icon icon-Search"></i></button>
+                            </span>
+                            </div>
+                        </form>
+                    </div>
+                </div> <!--Search-->
+                <div class="row widget widget-categories">
+                    <h4 class="widget-title">Categories</h4>
+                    <div class="row widget-inner">
+                        <ul class="nav categories">
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Roofing Install and Repairs</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Painting and Staining</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Roofing Install and Repairs</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Home Renovation</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Heating and Cooling</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>Door and Window Repairing</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Categories-->
+                <div class="row widget widget-popular-posts">
+                    <h4 class="widget-title">popular posts</h4>
+                    <div class="row widget-inner">
+                        <div class="media popular-post">
+                            <div class="media-left"><a href="http://galaxyanalytics.net/demos/handyman/single.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/1.jpg" alt=""></a></div>
+                            <div class="media-body">
+                                <h5 class="post-title"><a href="http://galaxyanalytics.net/demos/handyman/single.html">Repairing of doors and Wiindows</a></h5>
+                                <h5 class="post-date"><a href="#">Dec 12, 2015</a></h5>
+                            </div>
+                        </div> <!--Popular Post-->
+                        <div class="media popular-post">
+                            <div class="media-left"><a href="http://galaxyanalytics.net/demos/handyman/single.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/2.jpg" alt=""></a></div>
+                            <div class="media-body">
+                                <h5 class="post-title"><a href="http://galaxyanalytics.net/demos/handyman/single.html">We take care of your home renovation</a></h5>
+                                <h5 class="post-date"><a href="#">Dec 12, 2015</a></h5>
+                            </div>
+                        </div> <!--Popular Post-->
+                        <div class="media popular-post">
+                            <div class="media-left"><a href="http://galaxyanalytics.net/demos/handyman/single.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/3.jpg" alt=""></a></div>
+                            <div class="media-body">
+                                <h5 class="post-title"><a href="http://galaxyanalytics.net/demos/handyman/single.html">Repairing of doors and Wiindows</a></h5>
+                                <h5 class="post-date"><a href="#">Dec 12, 2015</a></h5>
+                            </div>
+                        </div> <!--Popular Post-->
+                    </div>
+                </div> <!--Popular Posts-->
+                <div class="row widget widget-tag-clouds">
+                    <h4 class="widget-title">tag clouds</h4>
+                    <div class="row widget-inner">
+                        <a href="#" class="tag">Renovation</a>
+                        <a href="#" class="tag">painting &amp; tiling</a>
+                        <a href="#" class="tag">window &amp; door</a>
+                        <a href="#" class="tag">carpentary</a>
+                        <a href="#" class="tag">roofing</a>
+                        <a href="#" class="tag">plumbing</a>
+                    </div>
+                </div> <!--Tag Clouds-->
+                <div class="row widget widget-recent-projects">
+                    <h4 class="widget-title">recent projects</h4>
+                    <div class="row widget-inner">
+                        <div class="owl-carousel recent-projects">
+                            <div class="item"><a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/4.jpg" alt=""></a></div>
+                            <div class="item"><a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/4.jpg" alt=""></a></div>
+                            <div class="item"><a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/4.jpg" alt=""></a></div>
+                            <div class="item"><a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><img src="http://galaxyanalytics.net/demos/handyman/images/blog/recent/4.jpg" alt=""></a></div>
+                        </div>
+                    </div>
+                </div> <!--Tag Clouds-->
+            </div>
+        </div>
+        <div class="blog_section">
+            <div class="blog_section_inner  row m0">
+                <div class="single-product-details row">
+                    <div class="col-md-6">
+                        <img src="{{ asset('Uploads/images/' ~ ev.image ) }}" width="130px" height="370px">
+
+                        {% if(userverif is empty) %}
+
+
+
+
+                        {{ form_start(form1) }}
+                        {{ form_widget(form1.rating) }}
+                        {{ form_end(form1) }}
+                           {% endif %}
+
+
+
+
+                        {% for ratingss in ratings %}
+                            {% for numm in num %}
+                                {% if(num[0] == null)and(ratings[0] == null) %}
+                                    {{ 0|rating }}
+                                {% endif %}
+                                {% if(numm[1] != 0)and(ratingss[1] != 0) %}
+                                    {{ (ratingss[1]/numm[1])|rating }}
+                                {% endif %}
+                                {% else %}
+                                  {{ 0|rating }}
+                            {% endfor %}
+                        {% endfor %}
+
+                    </div>
+                    <div class="col-md-6">
+                        <h3>{{ ev.libelle }}</h3>
+                        <p>{{ ev.description }} </p>
+                        <p class="price">Prix: <span>{{ ev.prix }} TND</span></p>
+                        {% block body %}
+
+                        {{ form_start(form) }}
+                        <p class="price">Quantité d'achats:  {{ form_widget(form.quantite , {'attr':{'class':'form-control'}} )   }}</p>
+                            {{ form_end(form) }}
+
+                        {% endblock %}
+
+                    </div>
+                </div>
+                <div class="product-tab">
+                    <div class="product-tab-title">
+                        <ul role="tablist">
+                            <li class="active">
+                                <a href="#des" aria-controls="des" role="tab" data-toggle="tab">Descripton</a>
+                            </li>
+                            <li>
+                                <a href="#spec" aria-controls="spec" role="tab" data-toggle="tab">Specification</a>
+                            </li>
+                            <li>
+                                <a href="#review" aria-controls="review" role="tab" data-toggle="tab">Review (0)</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="product-tab-content tab-content">
+                        <div class="single-product-tab-content tab-pane fade in active" id="des" >
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <br>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        </div>
+                        <div class="single-product-tab-content tab-pane fade" id="spec">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <br>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        </div>
+                        <div class="single-product-tab-content tab-pane fade" id="review">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+                            <br>
+                            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="clear:both;"></div>
+                <div class="sec-title">
+                    <h2><span>Best Selling</span></h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-product-item img-cap-effect">
+                            <div class="img-box">
+                                <img src="http://galaxyanalytics.net/demos/handyman/images/shop/7.jpg" alt="Awesome Image"/>
+                                <div class="img-caption">
+                                    <div class="box-holder">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>classic Air Filter</h3>
+                            <ul>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star-half"></i></span></li>
+                                <li><span><i class="fa fa-star-o"></i></span></li>
+                            </ul>
+                            <p class="price">$39.99</p>
+                            <a href="#" class="thm-btn">add to cart <i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-product-item img-cap-effect">
+                            <div class="img-box">
+                                <img src="http://galaxyanalytics.net/demos/handyman/images/shop/8.jpg" alt="Awesome Image"/>
+                                <div class="img-caption">
+                                    <div class="box-holder">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>classic Air Filter</h3>
+                            <ul>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star-half"></i></span></li>
+                                <li><span><i class="fa fa-star-o"></i></span></li>
+                            </ul>
+                            <p class="price">$39.99</p>
+                            <a href="#" class="thm-btn">add to cart <i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6">
+                        <div class="single-product-item img-cap-effect">
+                            <div class="img-box">
+                                <img src="http://galaxyanalytics.net/demos/handyman/images/shop/9.jpg" alt="Awesome Image"/>
+                                <div class="img-caption">
+                                    <div class="box-holder">
+                                        <ul>
+                                            <li><a href="#"><i class="fa fa-link"></i></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <h3>classic Air Filter</h3>
+                            <ul>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star"></i></span></li>
+                                <li><span><i class="fa fa-star-half"></i></span></li>
+                                <li><span><i class="fa fa-star-o"></i></span></li>
+                            </ul>
+                            <p class="price">$39.99</p>
+                            <a href="#" class="thm-btn">add to cart <i class="fa fa-shopping-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+</div>
+
+{% endblock %}

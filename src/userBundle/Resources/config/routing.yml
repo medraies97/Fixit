@@ -1,0 +1,15 @@
+user_homepage:
+    path:     /
+    defaults: { _controller: userBundle:Default:index }
+my_app_user_Client:
+    path:     /Client
+    defaults: { _controller: userBundle:Default:homeClient }
+my_app_user_Admin:
+    path:     /Admin
+    defaults: { _controller: userBundle:Default:homeAdmin }
+my_app_user_Ouvrier:
+    path:     /Ouvrier
+    defaults: { _controller: userBundle:Default:indexClient }
+user_homepage_client:
+    path:     /client
+    defaults: { _controller: userBundle:Default:indexClient }

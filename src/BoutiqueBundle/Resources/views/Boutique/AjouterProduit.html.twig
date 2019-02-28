@@ -1,0 +1,104 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <!-- BEGIN: .main-content -->
+    <header class="page-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="page-title">
+                        <h3>Ajouter Un Outil</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+
+                <!-- Card starts -->
+                <div class="card">
+                    <div class="card-body">
+
+                        <!--*************************
+                        *************************
+                        *************************
+                         Contact Form Start
+                        *************************
+                        *************************
+                        *************************-->
+
+
+
+                        <!-- Row start -->
+                        <div class="row justify-content-center gutters">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                                <div class="form-block">
+                                    <div class="form-block-header">
+                                        <h5>Ajout d'un outil</h5>
+                                        <h6>Vous devez remplir les champs ci dessous :</h6>
+                                    </div>
+                                    <div class="form-block-body">
+                                        {% block body %}
+                                            {{ form_start(form) }}
+
+                                            <div class="form-group">
+                                                {{ form_widget(form.libelle , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.description , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.prix , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.remise , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.quantiteDispo , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.quantiteDispo , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.quantiteDispo , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.marque , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                <h6>Catégorie:</h6>
+                                                {{ form_widget(form.categorie , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                {{ form_widget(form.image , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+                                            <div class="form-group">
+                                                <h6>Date de fabtication:</h6>
+                                                {{ form_widget(form.dateFabrication , {'attr':{'class':'form-control'}} )   }}
+                                            </div>
+
+                                            {{ form_end(form) }}
+
+                                        {% endblock %}
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Card ends -->
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

@@ -1,0 +1,57 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">Table with Product Status</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                            <tr>
+                                <th>ID Livreur</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Téléphone</th>
+                                <th>Email</th>
+                                <th>Action</th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for l in livreur %}
+                            <tr>
+                                <td>
+                                    <span class="text-info">{{ l.IdLivreur}}</span>
+                                </td>
+                                <td> {{ l.Nom}}</td>
+                                <td>{{ l.Prenom}}</td>
+                                <td>{{ l.Tel}}</td>
+
+                                <td>
+                                    <span class="text-muted">{{ l.Email}}</span>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-rounded  btn-rounded btn-sm">modifer</button>
+                                    <button type="button" class="btn btn-danger btn-sm">supprimer</button>
+
+                                </td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+
+
+
+
+
+{% endblock %}

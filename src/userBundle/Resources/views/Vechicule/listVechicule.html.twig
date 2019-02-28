@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">Table with Product Status</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                            <tr>
+                                <th>Matricule</th>
+                                <th>marque</th>
+                                <th>statut</th>
+                                <th>localisation</th>
+                                <th> <button type="button" class="btn btn-primary btn-sm"><a href="{{ path('vechicule_ajouter')}}" >Ajouter</a><i class="icon icon-cog3"></i></button></th>
+
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for l in vechicule %}
+                                <tr>
+                                    <td>
+                                        <span class="text-info">{{ l.Matricule}}</span>
+                                    </td>
+                                    <td> {{ l.marque}}</td>
+                                    <td>{{ l.statut}}</td>
+                                    <td>{{ l.localisation}}</td>
+
+
+                                    <td><button type="button" class="btn btn-success btn-sm" ><a href="{{ path ('vechicule_update',{'id':l.Matricule})}}" >modifer<i class="icon icon-wrench"></i></a></button>
+                                        <button type="button" class="btn btn-danger btn-sm"><a href="{{ path ('vechicule_delete',{'ref':l.Matricule})}}" >supprimer</a><i class="icon icon-trash"></i></button>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+
+
+
+
+
+{% endblock %}

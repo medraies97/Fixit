@@ -1,0 +1,42 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+<link href="{{ asset('admin/css/bootstrap.css') }}" rel="stylesheet" /><!--bootstrap-->
+<link href="{{ asset('admin/css/font-awesome.css') }}" rel="stylesheet"><!--font-awesome-->
+<link href="{{ asset('admin/css/lightcase.css') }}" rel="stylesheet" type="text/css" />
+<link href="{{ asset('admin/css/style1.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <br><br>
+    <ul>
+        <li><div class="btnadmin"><a style="margin-left:240px;" href="{{ path('Reclamation') }}">Admin</a><br></div></li>
+        <li><br><div class="btnprest"><a style="margin-left:230px;" href="{{ path('listeOuvrierClient') }}" >Prestatire</a></div></li>
+    </ul>
+    <br>
+    <br>
+    <style>
+        .btnadmin{
+            margin-left: 390px;
+            width: 15cm;
+            height: 3cm;
+            font-size: 24px;
+            background-color: #e1ba60;
+            color: black;
+            border: 5px solid #333
+
+        }
+        .btnprest{
+            margin-left: 390px;
+            width: 15cm;
+            height: 3cm;
+            font-size: 24px;
+            background-color: #333;
+            color: #e1ba60;
+            border: 5px solid #e1ba60
+        }
+    </style>
+
+
+
+
+
+
+{% endblock %}

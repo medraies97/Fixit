@@ -1,0 +1,25 @@
+ {% extends 'baseClient.html.twig' %}
+
+{% block ontent %}
+    <h4 class="widget-title">Search</h4>
+    <div class="row widget-inner">
+        <form action="#" class="search-form" method="get">
+            <div class="input-group">
+                <input type="search" class="form-control" placeholder="Enter Search keywords">
+                <span class="input-group-addon">
+                                <button type="submit"><i class="icon icon-Search"></i></button>
+                            </span>
+            </div>
+        </form>
+    </div>
+
+
+    <h3 class="leave-comment-title">Leave a Comment</h3>
+<form action="#" method="post" class="comment_form row">
+    <input type="text" class="form-control" placeholder="Enter your name">
+    <input type="email" class="form-control" placeholder="Enter your email address">
+    <textarea placeholder="Write comment" class="form-control"></textarea>
+    <button type="submit" class="btn btn-primary">submit now<i class="fa fa-angle-double-right"></i></button>
+</form>
+
+{% endblock %}

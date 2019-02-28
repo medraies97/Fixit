@@ -1,0 +1,98 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <!-- BEGIN .main-content -->
+    <div class="main-content">
+
+        <!-- Row start -->
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+
+                <!-- Card starts -->
+                <div class="card">
+                    <div class="card-body">
+
+                        <!--*************************
+                        *************************
+                        *************************
+                         Contact Form Start
+                        *************************
+                        *************************
+                        *************************-->
+
+
+
+                        <!-- Row start -->
+                        <div class="row justify-content-center gutters">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                <form METHOD="POST">
+                                    <div class="form-block">
+                                        <div class="form-block-header">
+                                            <h5>Modifier événement d'ID: {{ ev.id_ev }}</h5>
+                                        </div>
+                                        <div class="form-block-body">
+                                            <div class="form-group">
+                                                <input type="text" name="intitule_ev" value="{{ ev.intitulee_ev }}" class="form-control">                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="description_ev" value="{{ ev.description_ev }}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="adresse_ev" value="{{ ev.adresse_ev }}" class="form-control">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="datetime-local" name="date_ev" value="{{ ev.date_ev | date ('d/m/yy--h:m')}}">
+                                            </div>
+                                            <div class="form-group">
+                                                <select name="categorie" class="form-control" >
+
+                                                    {% for c in cat  %}
+
+                                                        {% if c.id_cat == ev.categorie.id_cat %}
+
+                                                            <option value={{ c.id_cat }} selected>{{ c.intitulee_cat }}</option>
+
+                                                        {% endif %}
+
+                                                        {% if c.id_cat != ev.categorie.id_cat %}
+
+                                                            <option value={{ c.id_cat }} > {{ c.intitulee_cat }}</option>
+
+                                                        {% endif %}
+
+                                                    {% endfor %}
+
+                                                </select>                                            </div>
+                                            <div class="form-group">
+                                                <input type="submit" value="Enregistrer" class="btn btn-primary btn-rounded">
+
+                                            </div>
+                                </form>
+                            </div>
+
+                        </div>
+                        <!-- Row end -->
+
+
+
+                        <!--*************************
+                        *************************
+                        *************************
+                         Contact Form End
+                        *************************
+                        *************************
+                        *************************-->
+
+                    </div>
+
+                </div>
+                <!-- Card ends -->
+
+            </div>
+        </div>
+        <!-- Row end -->
+
+    </div>
+    <!-- END: .main-content -->
+{% endblock %}

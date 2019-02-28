@@ -1,0 +1,36 @@
+
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+{{ form_start(form) }}
+<div class="main-content">
+<table>
+    <tr>
+        <td>nomArticle:</td><td>{{ form_widget(form.nomArticle , { 'attr': {'class': 'form-control form-control form-control-sm'} }) }}</td>
+    </tr>
+    <tr>
+        <td>ContenuArticle:</td><td> {{ form_widget(form.contenuArticle , { 'attr': {'class': 'form-control form-control form-control-sm'} }) }}</td>
+    </tr>
+
+
+    <tr>
+        <td>dateCreationArticle</td><td> {{ form_widget(form.dateCreationArticle) }}</td>
+    </tr>
+
+    <tr>
+        <td>modele:</td><td> {{ form_widget(form.photo) }}</td>
+    </tr>
+    <tr>
+        <td>categorie:</td><td> {{ form_widget(form.categ_art) }}</td>
+    </tr>
+    <td>   <button type="submit" class="btn btn-info btn-sm">
+            <i class="icon-plus2"></i>  Ajouter </button>
+
+        </a>
+       </td></tr>
+</table>
+</div>
+{{ form_end(form) }}
+
+{% endblock %}
+

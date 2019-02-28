@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="main-content">
+<div class="table-users">
+    <div class="header"><h4 style="font-weight: bold"><center>Liste des Ouvriers</center></h4></div>
+    <table id="datatable" class="table table-striped table-bordered">
+        <thead>
+
+        <th>Nom Ouvrier</th>
+        <th>Prénom Ouvrier</th>
+        <th>Profession</th>
+        <th>Nom Utilisateur</th>
+        <th>Email</th>
+        <th>Numero de telephone</th>
+        <th>Mise à jour</th>
+        <th>Supprimer Ouvrier</th>
+        <th>Nombre d'avertissements</th>
+        <th>avertir</th>
+        </thead>
+        {% for Ouvrier in Ouvrier %}
+            <form action="" method="post">
+            <tr>
+
+                <td>{{ Ouvrier.nom }}</td>
+                <td>{{ Ouvrier.prenom }}</td>
+                <td>{{ Ouvrier.profession }}</td>
+                <td>{{ Ouvrier.username }}</td>
+                <td>{{ Ouvrier.email }}</td>
+                <td>{{ Ouvrier.tel }}</td>
+                <td><a href="{{ path('MAJ_Ouvrier',{'id':Ouvrier.id }) }}" >Update</a></td>
+                <td><a href="{{ path('supprimer_Ouvrier',{'id':Ouvrier.id })}}" >Delete</a></td>
+                <td>{{ Ouvrier.nombreAvertissements }}</td>
+                <td><a href="{{ path('Ajout_Avertissement',{'id':Ouvrier.id }) }}" >avertir</a></td>
+            </tr>
+            </form>
+        {% endfor %}
+    </table>
+
+</div>
+</div>
+
+{% endblock %}

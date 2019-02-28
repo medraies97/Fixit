@@ -1,0 +1,96 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+    <div class="main-content">
+<<div class="table-users">
+            <div class="header"><h4 style="font-weight: bold;font-family: 'PT Serif', serif">Liste des Ouvriers</h4></div>
+            <table class="table" border="4">
+
+
+            <th>Nom Ouvrier</th>
+        <th>Prénom Ouvrier</th>
+        <th>Profession</th>
+        <th>Nom Utilisateur</th>
+        <th>reclamer</th>
+
+        {% for Ouvrier in Ouvrier %}
+            <form action="" method="post">
+            <tr>
+
+                <td>{{ Ouvrier.nom }}</td>
+                <td>{{ Ouvrier.prenom }}</td>
+                <td>{{ Ouvrier.profession }}</td>
+                <td>{{ Ouvrier.username }}</td>
+
+
+
+
+
+                <td><a href="{{ path('AjoutReclamationOuvrier',{'id':Ouvrier.id }) }}" >reclamer</a></td>
+            </tr>
+            </form>
+        {% endfor %}
+    </table>
+
+</div>
+</div>
+    </div>
+
+
+
+    <link rel="stylesheet" href="{{ asset('admin/css/styletable.css') }}" />
+    <link href="{{ asset('admin/css/bootstrap.css') }}" rel="stylesheet" /><!--bootstrap-->
+    <link href="{{ asset('admin/css/font-awesome.css') }}" rel="stylesheet"><!--font-awesome-->
+    <link href="{{ asset('admin/css/lightcase.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/css/style1.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <style>
+        .btnresate{
+            width: 300px;
+            height: 43px;
+            background-color: #5eb5e0;
+            margin-left: 100px;
+        }
+        .btnsave{
+            width: 300px;
+            height: 43px;
+            background-color: #ec971f;
+            margin-left: 200px;
+        }
+        .tki{
+            width: 1142px;
+            height: 200px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: url("{{ asset('admin/img/imgmsg.png') }}");
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .sell{
+            width: 402px;
+            height: 43px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: url("{{ asset('admin/img/imgmsg.png') }}");
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+    </style>
+{% endblock %}

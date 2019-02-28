@@ -1,0 +1,21 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+
+{{ form_start(f , { 'attr': {'class': 'comment_form row'}} )}}
+
+
+
+
+
+
+
+
+        {{ form_widget(f.comment ,{ 'attr': {'class': 'form-control'} } ) }}
+
+
+<button type="submit" class="btn btn-primary">submit now<i class="fa fa-angle-double-right"></i></button>
+
+
+{{ form_end(f) }}
+{% endblock %}

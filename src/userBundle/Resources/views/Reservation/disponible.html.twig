@@ -1,0 +1,41 @@
+{% extends 'baseClient.html.twig' %}
+{% block content %}
+<div class="card">
+    <div class="card-body">
+
+
+        <div class="table-responsive">
+            <table class="table m-0">
+                <thead>
+                <tr>
+                    <th>id</th>
+                    <th>nom</th>
+                    <th>prenom</th>
+                    <th>adresse</th>
+                    <th>Service </th>
+                    <th>mail</th>
+                    <th>telephone</th>
+                    <th>Reservé</th>
+                    <th>retour</th>
+
+
+                    {% for m in user %}
+                <tr>
+                    <td>{{ m.id }} </td>
+                    <td>{{ m.nom }} </td>
+                    <td>{{ m.prenom }} </td>
+                    <td>{{ m.adresse }} </td>
+                    <td>    <output name="result">{{ m.Service}} </output> </td>
+                    <td>{{ m.email }}</td>
+                    <td>{{ m.tel }} </td>
+                    <td>  <button type="button" class="btn btn-danger btn-sm"><a href="{{ path('home_ajouterReservation')}}" >reservé</a><i class="icon icon-trash"></i></button>   </td>
+                    <td>  <button type="button" class="btn btn-success btn-rounded"><a href="{{ path('home_client')}}" >retour</a><i class="icon icon-trash"></i></button>   </td>
+
+                    {% endfor %}
+                </tr>
+                </tr>
+
+                </thead>
+
+            </table>
+{% endblock %}

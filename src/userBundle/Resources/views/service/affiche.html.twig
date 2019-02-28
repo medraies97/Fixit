@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+
+
+    <div class="card">
+        <div class="card-header">Liste des services</div>
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>prix par heure</th>
+                        <th>Image de service</th>
+                        <th>description de service</th>
+                        <th>Suppression</th>
+                        <th>Modification</th>
+                        {#<td>  <button type="button" class="btn btn-success btn-rounded"><a href="{{ path('home_rechercher',{'NomService':m.NomService})}}" >Rechercher</a><i class="icon icon-trash"></i></button>   </td>#}
+
+                        {% for m in services %}
+                    <tr>
+                        <td>{{ m.id }} </td>
+                        <td>{{ m.NomService }} </td>
+                        <td>{{ m.prixparheure }} </td>
+                        <td><img src="{{ asset('Uploads/images/' ~ m.image ) }}" width="250px" height="100px"></td>
+                        <td>{{ m.description }} </td>
+                     <td>  <button type="button" class="btn btn-danger btn-sm"><a href="{{ path('home_effacer',{'id':m.id})}}" >supprimer</a><i class="icon icon-trash"></i></button>   </td>
+                        <td>  <button type="button" class="btn btn-success btn-rounded"><a href="{{ path('modif_service',{'id':m.id})}}" >modifier</a><i class="icon icon-trash"></i></button>   </td>
+
+                        {#<td>   <a href ="{{ path ('home_effacer',{'idService':m.idService}) }}">supprimer</a> <br></td>#}
+
+                        {% endfor %}
+                    </tr>
+                    </tr>
+
+                    </thead>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

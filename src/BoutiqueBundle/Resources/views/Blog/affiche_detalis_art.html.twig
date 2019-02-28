@@ -1,0 +1,17 @@
+{% for b in Article %}
+    {% for v in commentaires %}
+     <div>
+
+         Nom: {{ b.nomArticle }}  Cotenu:{{ b.contenuArticle }}  Commentaire {{ b.nbrCommentaire}}
+         Date:   {{ b.dateCreationArticle | date('Y-m-d H:i:s')}}
+         photo : <img src="{{asset('uploads/images/' ~ b.photo) }}"width="300" height="300">
+         categorie : {{ b.CategArt.nomCategorie }}
+     </div>
+
+        <table> <td>Nom: {{ v.Commentaireuser.username }} Commentaire:{{ v.comment }} Date:{{ v.dateCreationComm| date('Y-m-d H:i:s') }}  - <a href="{{ path('supprimer_commentaire',{'id':v.id}) }}">Supprimer</a>-
+                - <a href="{{ path('modifier_commentaire',{'id':v.id}) }}">modifier</a></td>
+
+        </table>
+
+{% endfor %}
+

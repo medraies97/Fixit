@@ -1,0 +1,72 @@
+{% extends 'baseClient.html.twig' %}
+{% block content %}
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Reserver</h2>
+                <ol class="breadcrumb">
+                    <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                    <li class="services.html">Reservation</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <section class="row touch">
+    <div class="sectpad touch_bg">
+    <div class="container">
+    <div class="row m0 section_header">
+        <h2>vos reservation</h2>
+    </div>
+
+
+    <div class="card">
+        <div class="card-body">
+
+
+            <div class="table-responsive">
+                <table class="table m-0">
+                    <thead>
+                    <tr>
+                        <th>idReservation</th>
+                        <th>nom</th>
+                        <th>prenom</th>
+                        <th>adresse</th>
+                        <th>Service reservé</th>
+                        <th>dateReservation</th>
+                        <th>nombreheureestimee</th>
+                        <th>ouvrier reservé</th>
+                        <th>Suppression</th>
+                        <th>Modification</th>
+                        {#<td>  <button type="button" class="btn btn-success btn-rounded"><a href="{{ path('home_rechercher',{'NomService':m.NomService})}}" >Rechercher</a><i class="icon icon-trash"></i></button>   </td>#}
+
+                        {% for m in reservations %}
+                    <tr>
+                        <td>{{ m.id }} </td>
+                        <td>{{ m.nom }} </td>
+                        <td>{{ m.prenom }} </td>
+                        <td>{{ m.adresse }} </td>
+                        {#<td>{{ m.Service }} </td>#}
+                    <td>    <output name="result">{{ m.Service}} </output> </td>
+                        <td>{{ m.dateReservation|date('y-m-d') }}</td>
+                        <td>{{ m.nombreheureestimee }} </td>
+                        <td>{{ m.User }} </td>
+                        {#{% for v in services %}#}
+                        <td>  <button type="button" class="btn btn-danger btn-sm"><a href="{{ path('home_effacerReservation',{'id':m.id})}}" >annuler</a><i class="icon icon-trash"></i></button>   </td>
+                        <td>  <button type="button" class="btn btn-success btn-rounded"><a href="{{ path('home_modifierReservation',{'id':m.id})}}" >modifier</a><i class="icon icon-trash"></i></button>   </td>
+
+                        {#<td>   <a href ="{{ path ('home_effacer',{'idService':m.idService}) }}">supprimer</a> <br></td>#}
+
+                        {% endfor %}
+                    </tr>
+                    </tr>
+
+                    </thead>
+
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+
+{% endblock %}

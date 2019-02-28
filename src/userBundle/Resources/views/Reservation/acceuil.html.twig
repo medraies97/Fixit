@@ -1,0 +1,93 @@
+{% extends 'baseClient.html.twig' %}
+{% block content %}
+<section class="row service">
+    <div class="sectpad service_bg">
+        <div class="container">
+            <div class="row m0 section_header">
+                <h2>Nos service</h2>
+                <h5>nous avons les meilleurs solutions a vos problémes</h5>
+                <p>On a toujours besoin d’un coup de main à la maison pour réaliser de petits travaux .
+                    ! Trouvez rapidement et à moindre frais un pro , en faisant appel aux prestataires de fixit.
+                    Compétents, réactifs et fiables, nos jobeurs sont vérifiés et notés.
+                    Enfin, un service clé en main pour intervenir chez vous en toute sécurité :
+                    publiez, réservez et admirez le travail !</p>
+
+            </div>
+
+            <div class="row service_members">
+                {% for m in services %}
+                    <div class="member col-sm-6 col-md-4">
+                        <div class="service_img row m0">
+
+                            <img src="{{ asset('Uploads/images/' ~ m.image ) }}" width="250px" height="100px">
+                            <div class="image_opacity"></div>
+                        </div>
+                        <h4>{{ m.NomService }}</h4>
+                        <p>{{ m.description }}</p>
+                        <label for="example">click ici pour reserver</label>
+                        <button type="button" class="btn btn-dark btn-rounded"><a href="{{ path('home_ajouterReservation')}}" >{{ m.NomService }}</a><i class="icon icon-drafts"></i></button>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <section class="row builder_bg">
+        <div class="container">
+            <div class="row builder">
+                <div class="col-sm-8 content">
+                    <div class="m0 media">
+                        <div class="media-left">
+                            <a href="{{ path('home_affclient')}}">
+                                <span class="icon icon-Pulse"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">afficher vos reservation</h4>
+                            <p>vous pouvez ici voir vos reservations</p>
+                        </div>
+                    </div>
+                    <div class="m0 media">
+                        <div class="media-left">
+                            <a href="{{ path('home_disponible')}}">
+                                <span class="icon icon-Users"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Prestataire disponible</h4>
+                            <p>nos prestatires sont rapide ,stable et precis </p>
+                        </div>
+                    </div>
+                    <div class="m0 media">
+                        <div class="media-left">
+                            <a href="#">
+                                <span class="icon icon-Timer"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Livraison</h4>
+                            <p>Nos livreur sont rapides et efficases </p>
+                        </div>
+                    </div>
+                    <div class="m0 media">
+                        <div class="media-left">
+                            <a href="#">
+                                <span class="icon icon-ChartUp"></span>
+                            </a>
+                        </div>
+                        <div class="media-body">
+                            <h4 class="media-heading">Reclamation</h4>
+                            <p>votre reclamation est enrichessante </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 image">
+                    <img src="images/builder/1.png" alt="">
+                </div>
+
+            </div>
+        </div>
+    </section>
+</section>
+
+{% endblock %}

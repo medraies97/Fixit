@@ -1,0 +1,56 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <div class="row gutters">
+        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <div class="card">
+                <div class="card-header">Table with Product Status</div>
+                <div class="card-body">
+                    <div class="table-responsive">
+                        <table class="table m-0">
+                            <thead>
+                            <tr>
+                                <th>ID Livreur</th>
+                                <th>Nom</th>
+                                <th>Prenom</th>
+                                <th>Téléphone</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                                <th> <button type="button" class="btn btn-primary btn-sm"><a href="{{ path('livreur_ajouter_livreur')}}" >Ajouter</a><i class="icon icon-cog3"></i></button></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for l in livreur %}
+                            <tr>
+                                <td>
+                                    <span class="text-info">{{ l.id}}</span>
+                                </td>
+                                <td> {{ l.Nom}}</td>
+                                <td>{{ l.Prenom}}</td>
+                                <td>{{ l.Tel}}</td>
+
+                                <td>
+                                    <span class="text-muted">{{ l.Email}}</span>
+                                </td>
+                                <td><button type="button" class="btn btn-success btn-sm" ><a href="{{ path('esprit_parc_updateLivreur',{'id':l.id })}}" >modifer<i class="icon icon-wrench"></i></a></button>
+                                <button type="button" class="btn btn-danger btn-sm"><a href="{{ path('livreur_supprimer_livreur',{'id':l.id })}}" >supprimer</a><i class="icon icon-trash"></i></button>
+                                </td>
+                                <td></td>
+                            </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+
+
+
+
+
+{% endblock %}

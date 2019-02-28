@@ -1,0 +1,21 @@
+h1,h2,h3,h4,h5,h6{
+    margin:0;
+    font-family: 'PT Serif', serif;
+}
+.numscroller {
+    font-size: 40px;
+    margin: 0;
+    color: #b50101;
+    text-shadow: 1px 1px rgb(123, 79, 3);
+    font-family: 'PT Serif', serif;
+    letter-spacing: 5px;
+}
+.detail-bottom ul li {
+    list-style: none;
+    display: inline;
+    color: #000;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'PT Serif', serif;
+    letter-spacing: 1px;
+}

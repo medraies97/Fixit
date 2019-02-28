@@ -1,0 +1,119 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+    <link href="{{ asset('admin/css/bootstrap.css') }}" rel="stylesheet" /><!--bootstrap-->
+    <link href="{{ asset('admin/css/font-awesome.css') }}" rel="stylesheet"><!--font-awesome-->
+    <link href="{{ asset('admin/css/lightcase.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('admin/css/style1.css') }}" rel="stylesheet" type="text/css" media="all" />
+    <!--Page Cover-->
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Espace Assistance</h2>
+                <ol class="breadcrumb">
+                    <li><a href="{{ path('user_homepage_client') }}">Home</a></li>
+                    <li><a href="{{ path('Reclamation') }}">Reclamation</a></li>
+                </ol>
+            </div>
+        </div>
+    </section>
+    <div class="container">
+        <center><h2 style="font-weight: 800;
+    letter-spacing: .5px;
+    font-size: 35px;
+    margin-bottom: 1.9em;
+    text-align: center;
+    color: #000;
+    text-transform: capitalize;
+    position: relative;">Réclamation
+                <span style="display: block;
+    font-size: 17px!important;
+    margin-top: 1em;
+    letter-spacing: 4px;
+    text-transform: capitalize;
+    color: #b50101;
+    font-weight: 500;">Aidez Nous A S'Amilioré.</span></h2></center>
+
+
+    {{ form_start(f) }}
+    <div class="form-group">
+        {# Les erreurs générales du formulaire . #}
+        {{ form_errors(f) }}</div>
+
+    <div  class="form-group">
+
+    <div  class="form-group">
+        {# Génération du label. #}
+        {{ form_label( f.objetReclamation , "Objet reclamation : ") }}
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors( f.objetReclamation ) }}
+        {# Génération de l'input. #}
+        {{ form_widget( f.objetReclamation,{'attr':{'class':'form-control'}}) }}
+    </div>
+    <div  class="form-group">
+        {# Génération du label. #}
+        {{ form_label( f.descReclamation , "Reclamation reclamation : ") }}
+        {# Affichage des erreurs pour ce champ précis. #}
+        {{ form_errors( f.descReclamation ) }}
+        {# Génération de l'input. #}
+        {{ form_widget( f.descReclamation, {'attr':{'class':'tki'}}) }}
+    </div>
+    <div class="form-group">
+        {{ form_widget( f.save,{'attr':{'class':'btnsave'}}) }}
+        {{ form_widget( f.reset,{'attr':{'class':'btnresate'}}) }}
+    </div>
+    {{ form_end(f) }}
+
+    <style>
+        .btnresate{
+            width: 300px;
+            height: 43px;
+            background-color: #5eb5e0;
+            margin-left: 100px;
+        }
+        .btnsave{
+            width: 300px;
+            height: 43px;
+            background-color: #ec971f;
+            margin-left: 200px;
+        }
+        .tki{
+            width: 1142px;
+            height: 200px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: url("{{ asset('admin/img/imgmsg.png') }}");
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .sell{
+            width: 402px;
+            height: 43px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: url("{{ asset('admin/img/imgmsg.png') }}");
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+    </style>
+
+
+{% endblock %}

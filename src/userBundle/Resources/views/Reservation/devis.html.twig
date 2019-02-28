@@ -1,0 +1,82 @@
+
+
+{% extends 'baseClient.html.twig' %}
+{% block content %}
+
+
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Devis</h2>
+                <ol class="breadcrumb">
+                    <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                    <li class="services.html">Devis</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+    <section class="row touch">
+    <div class="sectpad touch_bg">
+    <div class="container">
+    <div class="row m0 section_header">
+        <h2>devis pour client: {{ reservations }}</h2>
+    </div>
+
+    <table class="table table-bordered">
+    <thead>
+    <tr>
+        <th>nom client</th>
+        <th>frais des services(Dt)</th>
+        <th>le nombre dheure</th>
+        <th>prix par heure(Dt)</th>
+        <th>total(Dt)</th>
+    </tr>
+    </thead>
+    <tbody>
+
+
+        <td>{{ reservations }}</td>
+        <td>{{ 15  }}</td>
+        <td>{{ nombreheure }}</td>
+        <td>{{ prixheure}}</td>
+        <td>{{ total }}</td>
+
+
+
+    </tbody>
+
+    </table>
+
+    <div class="invoice-payment">
+        <div class="row gutters">
+            <div class="col-lg-6 col-md-6 col-sm-12">
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-12 order-last">
+                <table class="table no-border m-0">
+                    <tbody>
+                    <tr>
+                        <td>
+                            <p>
+                                total(Dt)<br>
+                                TVA=4.5%<br>
+                                Tax(Dt)<br>
+                            </p>
+                            <h5 class="text-danger"><strong>Grand Total(Dt)</strong></h5>
+                        </td>
+                        <td>
+                            <p>
+                               {{ total }}<br>
+                         {{tva}} <br>
+                                7.000<br>
+                            </p>
+                            <h5 class="text-danger"><strong>{{ total1 }}</strong></h5>
+                        </td>
+                        <td><button type="button" class="btn btn-success btn-rounded"><a href="{{ path('home_affclient')}}">retour</a><i class="icon icon-trash"></i></button></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

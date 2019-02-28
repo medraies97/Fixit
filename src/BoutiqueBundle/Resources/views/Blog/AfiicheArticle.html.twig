@@ -1,0 +1,85 @@
+
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+<div class="main-content" xmlns="http://www.w3.org/1999/html">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+</div>
+
+
+    {% for v in Article %}
+
+            Nom: {{ v.nomArticle }}  Cotenu:{{ v.contenuArticle }}  Commentaire {{ v.nbrCommentaire}}
+            Date:   {{ v.dateCreationArticle | date('Y-m-d H:i:s')}}
+            photo : <img src="{{asset('uploads/images/' ~ v.photo) }}"width="300" height="300">
+            categorie : {{ v.CategArt.nomCategorie }}
+                    <input type="hidden" id="idart-{{ v.id }}" value="{{ v.id }}">
+            <li>
+                <a href="#" onclick="noter(1,{{ v.id }})">
+                    <i class="fa fa-star" aria-hidden="true" id="star1"></i>
+                </a>
+
+                <a href="#" onclick="noter(2,{{ v.id }})">
+                    <i class="fa fa-star" aria-hidden="true" id="star2"></i>
+                </a>
+
+                <a href="#" onclick="noter(3,{{ v.id }})">
+                    <i class="fa fa-star" aria-hidden="true" id="star3"></i>
+                </a>
+
+                <a href="#" onclick="noter(4,{{ v.id }})">
+                    <i class="fa fa-star" aria-hidden="true" id="star4"></i>
+                </a>
+
+                <a href="#" onclick="noter(5,{{ v.id }})">
+                    <i class="fa fa-star" aria-hidden="true" id="star5"></i>
+                </a>
+               Note : <b id="note-{{ v.id }}"></b>
+            </li>
+
+        <div>    :
+            <a href="{{ path('details_Article',{'id':v.id}) }}">read more</a>
+        </div>
+
+    {% endfor %}
+<ul class="pagination">
+    <li class="prev"><a href="#"><i class="fa fa-arrow-left"></i></a></li>
+    <li class="active"><a href="#">1</a></li>
+    <li><a href="#">2</a></li>
+    <li><a href="#">3</a></li>
+    <li class="next"><a href="#"><i class="fa fa-arrow-right"></i></a></li>
+</ul>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js" >    </script>
+<script>
+    function noter(note,str)
+    {
+        $.ajax({
+            url :"{{ path('communate_noteevent') }}",
+            type: 'POST',
+            dataType: 'json',
+            data: {'login': 1,'noteart':note ,'id_article': $("#idart-"+str).val() } ,
+            async:  true,
+
+            success: function(data) {
+                //alert("success");
+               $('#note-'+str).html(data.note);
+            },
+            error: function () {
+                alert('Ajax request failed.');
+            }
+        });
+    }
+
+
+</script>
+{% endblock %}
+
+
+
+
+
+
+
+
+

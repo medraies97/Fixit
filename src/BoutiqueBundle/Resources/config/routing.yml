@@ -1,0 +1,467 @@
+profil:
+    path: /admin/profil
+    defaults: { _controller: BoutiqueBundle:Default:indexProfil }
+
+boutique_homepage_ajouter_produit:
+    path: /admin/ajouter
+    defaults: { _controller: BoutiqueBundle:Default:Ajoutproduit }
+
+boutique_homepage_ajouter_categorie:
+    path: /admin/ajouterC
+    defaults: { _controller: BoutiqueBundle:Default:AjoutCategorie }
+
+boutique_homepage_liste_produit:
+    path: /admin/afficherP
+    defaults: { _controller: BoutiqueBundle:Default:listeProduit }
+
+boutique_homepage_liste_categorie:
+    path: /admin/afficherc
+    defaults: { _controller: BoutiqueBundle:Default:listeCategorie }
+
+boutique_homepage_modifier_produit:
+    path: /admin/modifier/{id}
+    defaults: { _controller: BoutiqueBundle:Default:modifier }
+
+boutique_homepage_modifier_categorie:
+    path: /admin/modifierc/{id}
+    defaults: { _controller: BoutiqueBundle:Default:modifiercategorie }
+
+boutique_homepage_supprimer_produit:
+    path: /admin/supprimerp/{id}
+    defaults: { _controller: BoutiqueBundle:Default:supprimerProduit }
+
+boutique_homepage_supprimer_categorie:
+    path: /admin/supprimerc/{id}
+    defaults: { _controller: BoutiqueBundle:Default:supprimerCategorie }
+
+boutique_homepage_notif:
+    path: /admin/notif
+    defaults: { _controller: BoutiqueBundle:Default:indexnotif }
+
+shop:
+    path: /shop
+    defaults: { _controller: BoutiqueBundle:Default:Shop }
+shop_detail:
+    path: /shop_detail/{id}
+    defaults: { _controller: BoutiqueBundle:Default:Shopdetail }
+
+cart:
+    path: /cart
+    defaults: { _controller: BoutiqueBundle:Default:Cart }
+
+recherche:
+    path: /recherche
+    defaults: { _controller: BoutiqueBundle:Default:recherche}
+
+supprimer_panier:
+    path: /supprimer_panier/{id}/{idp}
+    defaults: { _controller: BoutiqueBundle:Default:supprimerPanier }
+
+PDF:
+    path: /PDF
+    defaults: { _controller: BoutiqueBundle:Default:PDF }
+checkout:
+    path: /payer
+    defaults: { _controller: BoutiqueBundle:Default:checkout }
+
+
+
+
+
+
+evenement_interface_events:
+    path:     /evenement
+    defaults: { _controller: BoutiqueBundle:Default:afficheeve }
+
+evenement_ajout_evenement:
+    path:     /admin/ajout
+    defaults: { _controller: BoutiqueBundle:Default:ajout }
+
+evenement_RUD_evenement:
+    path:     /admin/rud
+    defaults: { _controller: BoutiqueBundle:Default:rud }
+
+evenement_supprimer:
+    path:     /admin/supprimer/{id_ev}
+    defaults: { _controller: BoutiqueBundle:Default:supprimer }
+
+evenement_modifer:
+    path:     /admin/modifierevenement/{id_ev}
+    defaults: { _controller: BoutiqueBundle:Default:modifierevenement }
+
+esprit_parc_rechercher:
+    path:     /rechercher
+    defaults: { _controller: BoutiqueBundle:Default:rechercher }
+
+evenement_supprimer_cat:
+    path:     /admin/supprimercat/{id_cat}
+    defaults: { _controller: BoutiqueBundle:Default:supprimerCat }
+
+evenement_modifier_cat:
+    path:     /admin/modifiercat/{id_cat}
+    defaults: { _controller: BoutiqueBundle:Default:modifierCat }
+
+evenement_ajout_cat:
+    path:     /admin/ajoutCat
+    defaults: { _controller: BoutiqueBundle:Default:ajoutCat }
+
+evenement_evenement1:
+    path:     /evenement1/{id_ev}
+    defaults: { _controller: BoutiqueBundle:Default:afficheeve1 }
+evenement_evenement_mail:
+    path:     /mail
+    defaults: { _controller: BoutiqueBundle:Default:sendMail }
+
+evenement_evenement_participer:
+    path:     /participer/{id}
+    defaults: { _controller: BoutiqueBundle:Default:Participer }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+home_login:
+    path:     /afterlogin
+    defaults: { _controller: userBundle:security:redirect }
+home_afficher:
+    path:     /admin/affiche
+    defaults: { _controller: userBundle:Service:AfficherService }
+home_ajouter:
+    path:     /admin/ajoute
+    defaults: { _controller: userBundle:Service:ajouterService }
+home_effacer:
+    path:     /admin/delete/{id}
+    defaults: { _controller: userBundle:Service:deleteService }
+modif_service:
+    path:     /admin/modife/{id}
+    defaults: { _controller: userBundle:Service:modifierService }
+home_client11:
+    path:     /acceuilclient
+    defaults: { _controller: userBundle:Reservation:acceuil }
+home_ajouterReservation:
+    path:     /ajouter
+    defaults: { _controller: userBundle:Reservation:ajouterReservation }
+home_afficherReservation:
+    path:     /afficher
+    defaults: { _controller: userBundle:Reservation:afficherReservation }
+home_effacerReservation:
+    path:     /supp/{id}
+    defaults: { _controller: userBundle:Reservation:deleteReservation }
+home_modifierReservation:
+    path:     /modif/{id}
+    defaults: { _controller: userBundle:Reservation:modifierReservation }
+home_ListeReservation:
+    path:     /liste
+    defaults: { _controller: userBundle:Reservation:listeReservation }
+home_accepterstatus:
+    path:     /status/{id}
+    defaults: { _controller: userBundle:Reservation:statu }
+home_accepter:
+    path:     /admin/accepter
+    defaults: { _controller: userBundle:Reservation:listeaccepter }
+home_affadmin:
+    path:     /admin/aff
+    defaults: { _controller: userBundle:Service:afficherReservation }
+home_devis:
+    path:     /devis/{id}
+    defaults: { _controller: userBundle:Reservation:devis }
+home_affclient:
+    path:     /affclient
+    defaults: { _controller: userBundle:Reservation:Reservation }
+home_effacerpourclient:
+    path:     /sup/{id}
+    defaults: { _controller: userBundle:Reservation:delete }
+home_disponible:
+    path:     /disponible
+    defaults: { _controller: userBundle:Reservation:dispo }
+home_notif:
+    path:     /notif
+    defaults: { _controller: userBundle:Service:notif }
+my_app_user_Admin:
+    path:     /admin/Admin
+    defaults: { _controller: userBundle:Default:homeAdmin }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Choisir:
+    path:     /choisir
+    defaults: { _controller: userBundle:Reclamation:choisir}
+Reclamation:
+    path:     /rec
+    defaults: { _controller: userBundle:Reclamation:ajoutrecAdmin }
+AjoutReclamationOuvrier:
+    path:     /recPrest
+    defaults: { _controller: userBundle:Reclamation:ajoutrecPrest }
+listeOuvrierClient:
+    path:     /listeOuvriersClient
+    defaults: { _controller: userBundle:Reclamation:listeOuvrier }
+listeRecOuvrierlijew:
+    path:     /listeRecOuvrierlijew
+    defaults: { _controller: userBundle:Reclamation:listerecRecu }
+liste_Reclamation:
+    path:     /listeRec
+    defaults: { _controller: userBundle:Reclamation:listerec }
+delete_Reclamation:
+    path:     /deleteRec
+    defaults: { _controller: userBundle:Reclamation:deleterec }
+Modifier_Reclamation:
+    path:     /modifRec
+    defaults: { _controller: userBundle:Reclamation:modifrec }
+liste_Reclamation_Admin:
+    path:     /admin/listeRecAdmin
+    defaults: { _controller: userBundle:Reclamation:listerecadmin }
+modifier_Reclamation_Admin:
+    path:     /admin/modifRecAdmin
+    defaults: { _controller: userBundle:Reclamation:modifRecAdmin }
+supprimer_Reclamation_Admin:
+    path:     /admin/suppRecAdmin
+    defaults: { _controller: userBundle:Reclamation:deleteRecAdmin }
+reponse_admin:
+    path:     /admin/repRecAdmin
+    defaults: { _controller: userBundle:Reclamation:reponse}
+envoyerReclamation:
+    path:     /admin/envRecPrest
+    defaults: { _controller: userBundle:Reclamation:envoyerRecPrest}
+ModifierReclamationOuvrier:
+    path:     /modifRecOuvrier
+    defaults: { _controller: userBundle:Reclamation:modifRecOuvrier}
+reponse_Ouvrier:
+    path:     /repRecOuvrier
+    defaults: { _controller: userBundle:Reclamation:reponseOuvrier}
+
+
+
+Ajout_Avertissement:
+    path:     /admin/avertissement
+    defaults: { _controller: userBundle:Avertissement:ajoutAvertissement }
+liste_Avertissement_Admin:
+    path:     /admin/listeAvertAdmin
+    defaults: { _controller: userBundle:Avertissement:listeAvertissementAdmin }
+supprimer_Avertissement_Admin:
+    path:     /admin/suppAvertAdmin
+    defaults: { _controller: userBundle:Avertissement:deleteAvertissementAdmin }
+liste_Avertissement_Ouvrier:
+    path:     /listeAvertOuvrier
+    defaults: { _controller: userBundle:Avertissement:listeAvertRecu}
+liste_Avertissement_Client:
+    path:     /listeAvertClient
+    defaults: { _controller: userBundle:Avertissement:listeAvertRecuClient}
+
+Liste_Ouvrier:
+    path:     /admin/listeOuvrier
+    defaults: { _controller: userBundle:Ouvriers:listeOuvrier }
+supprimer_Ouvrier:
+    path:     /admin/suppOuvrier
+    defaults: { _controller: userBundle:Ouvriers:deleteOuvrier }
+MAJ_Ouvrier:
+    path:     /admin/MAJOuvrier
+    defaults: { _controller: userBundle:Ouvriers:updateOuvrier }
+Ajouter_Ouvrier:
+    path:     /admin/addOuvrier
+    defaults: { _controller: userBundle:Ouvriers:createOuvrier }
+
+
+Liste_Client:
+    path:     /admin/listeClient
+    defaults: { _controller: userBundle:Clients:listeClients }
+supprimer_Client:
+    path:     /admin/suppOuvrier
+    defaults: { _controller: userBundle:Clients:deleteClient }
+MAJ_Client:
+    path:     /admin/MAJClient
+    defaults: { _controller: userBundle:Clients:updateClient }
+Ajouter_Client:
+    path:     /admin/addClient
+    defaults: { _controller: userBundle:Clients:createClient }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+livreur_list_livreur:
+    path:     /admin/listLivreur
+    defaults: { _controller: userBundle:Livreur:LivreurList }
+livreur_ajouter_livreur:
+    path:     /admin/ajouterLivreur
+    defaults: { _controller: userBundle:Livreur:ajouterLivreur }
+livreur_supprimer_livreur:
+    path:     /admin/supprimer/{id}
+    defaults: { _controller: userBundle:Livreur:supprimerLivreur}
+esprit_parc_updateLivreur:
+    path:     /admin/updateLivreur/{id}
+    defaults: { _controller: userBundle:Livreur:updateLivreur}
+esprit_parc_trouverLivreur:
+    path:     /trouverLivreur
+    defaults: { _controller: userBundle:Livreur:trouverLivreur}
+vechicule_list:
+    path:     /listVechicule
+    defaults: { _controller: userBundle:Vechicule:VechiculeList }
+vechicule_ajouter:
+    path:     /admin/ajouterVechicule
+    defaults: { _controller: userBundle:Vechicule:ajouterVechicule }
+vechicule_update:
+    path:     /admin/updateVechicule/{id}
+    defaults: { _controller: userBundle:Vechicule:updatevechicule}
+vechicule_delete:
+    path:     /admin/delete/{ref}
+    defaults: { _controller: userBundle:Vechicule:deleteVechicule}
+trouver_livreur:
+    path:     /trouverLivreur/{x}/{y}
+    defaults: { _controller: userBundle:Livreur:trouverLivreur0}
+Form_serv:
+    path:     /formService
+    defaults: { _controller: userBundle:Livreur:trouverLivreur}
+my_map_homepage:
+    path:     /map
+    defaults: { _controller: userBundle:Default:map}
+add_livraison:
+    path:     /addLivraison/{id}/{long}/{lat}
+    defaults: { _controller: userBundle:Livraison:addLivraison}
+map_test:
+    path:     /maptest/{id}
+    defaults: { _controller: userBundle:Livraison:LivrisonForLivreur}
+home_livreur:
+    path:     /homeLivreur
+    defaults: { _controller: userBundle:Livreur:homeLivreur}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Page1:
+    path:     /page1
+    defaults: { _controller: BoutiqueBundle:Blog:AffichePage1 }
+AjoutCommentaire:
+    path:     /ajoutC
+    defaults: { _controller: BoutiqueBundle:Blog:ajouterCommentaire }
+AfficheComm:
+    path:     /affC
+    defaults: { _controller: BoutiqueBundle:Blog:afficheCommentaire }
+CrudCategAdmin:
+    path:     /admin/ajoutCateg
+    defaults: { _controller: BoutiqueBundle:Blog:ajouterCateg }
+supprimer_commentaire:
+    path:     /comm/{id}
+    defaults: { _controller: BoutiqueBundle:Blog:supprimerCommentaire }
+AjoutArticle:
+    path:     /ajoutArtc
+    defaults: { _controller: BoutiqueBundle:Blog:addArticle }
+AfficheArticle:
+    path:     /affArtc
+    defaults: { _controller: BoutiqueBundle:Blog:AfficheArticle }
+communate_noteevent:
+    path:     /ajax_request
+    defaults: { _controller: BoutiqueBundle:Blog:noter }
+    methods: [post]
+modifier_commentaire:
+    path:     /modC/{id}
+    defaults: { _controller: BoutiqueBundle:Blog:modifierComm }
+modifier_article:
+    path:     /modart/{id}
+    defaults: { _controller: BoutiqueBundle:Blog:update }
+details_Article:
+    path:     /detailsart/{id}
+    defaults: { _controller: BoutiqueBundle:Blog:detailsart }
+Affiche_Blog:
+    path:     /Blog
+    defaults: { _controller: BoutiqueBundle:Blog:AfficheBlog }
+Affiche_Article_admin:
+    path:     /admin/affArticle
+    defaults: { _controller: BoutiqueBundle:Blog:AfficheArticleadmin }
+AfficheCateg:
+    path:     /admin/affCateg
+    defaults: { _controller: BoutiqueBundle:Blog:afficheCateg }
+SuppCateg:
+    path:     /suppCateg/{id}
+    defaults: { _controller: BoutiqueBundle:Blog:supprimerCategorie }
+stat:
+    path:     /admin/stat
+    defaults: { _controller: BoutiqueBundle:Blog:stat }

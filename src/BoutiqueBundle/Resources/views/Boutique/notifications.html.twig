@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <!-- BEGIN: .main-content -->
+    <div class="main-content">
+
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+                <!-- Search results start -->
+                <div class="search-results">
+
+                    <!-- Search results header start -->
+                    <div class="results-header">Notifications:</div>
+                    <!-- Search results header end -->
+                    {% for i in fedi %}
+                    <div class="search-results-body">
+                        <div class="search-section">
+                            <a >Warning :</a>
+
+                            <p class="desc">Attention !! il vous reste {{ i.quantiteDispo }} pieces de
+                                l'outil {{ i.libelle }}</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Search results end -->
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

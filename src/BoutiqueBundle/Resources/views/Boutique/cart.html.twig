@@ -1,0 +1,86 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+
+<div class="main-content">
+
+<section class="row page-cover">
+    <div class="container">
+        <div class="row m0">
+            <h2>Cart Page</h2>
+            <ol class="breadcrumb">
+                <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                <li class="active">Cart Page</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!-- cart-page -->
+<section class="cart-page shop-page">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-sm-6 col-lg-offset-0 col-md-offset-0 col-sm-offset-3">
+                <table class="table cart-table contact-form">
+                    <thead>
+                    <tr>
+                        <th class="preview">Image de l'outil</th>
+                        <th class="product">Nom</th>
+                        <th class="price">Prix</th>
+                        <th class="quantity">Quantité d'achats</th>
+                        <th class="total">Total</th>
+                        <th class="del-item">Retirer du panier</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% set prix=0 %}
+                    {% for p in ev %}
+                        {% if p.user.id == user.id %}
+                            {% set prix = prix + p.produit.prix * p.quantite %}
+                    <tr>
+                        <td class="preview">
+                        <img src="{{ asset('Uploads/images/' ~ p.produit.image ) }}" width="80px" height="70px">
+                        </td>
+                        <td class="price">
+                            {{ p.produit.libelle }}
+                        </td>
+                        <td class="price">
+                            {{ p.produit.prix }} TND
+                        </td>
+                        <td class="price">
+                            {{ p.quantite }} piéces
+                        </td>
+                        <td class="price">
+                            {{ p.total }} TND
+                        </td>
+                        <td class="del-item">
+                            <a href="{{ path('supprimer_panier',{'id':p.id,'idp':p.produit.id}) }}" class="fa fa-close"></a>
+                        </td>
+                    </tr>
+                        {% endif %}
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row bottom-box">
+            <div class="col-lg-6 col-md-6 col-sm-6 pull-left cupon-box">
+                <input type="text" placeholder="cupon code">
+                <button type="submit">Apply Cupon</button>
+            </div>
+        </div>
+        <div class="cart-total-box row">
+            <div class="col-lg-5 col-sm-6 col-xs-12 pull-right">
+                <ul>
+                    <li class="cart-total">Cart Total</li>
+                    <li class="total">Total <span>{{ prix }} TND</span></li>
+                    <li class="proceed-to-checkout">
+                        <a href="{{ path('checkout') }}" class="thm-btn">Proceed to checkout <i class="fa fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+</div>
+{% endblock %}

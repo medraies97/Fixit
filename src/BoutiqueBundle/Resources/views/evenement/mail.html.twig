@@ -1,0 +1,53 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+    <!--Page Cover-->
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Plus d'infos</h2>
+            </div>
+        </div>
+    </section>
+
+            <div class="row touch_middle">
+                <div class="col-md-8 input_form">
+
+                    {{ form_start(f)}}
+
+                    <div class="form-group">
+                        {{ form_widget(f.sujet_mail, {'attr':{'class':'form-control'}} )  }}
+                    </div>
+
+                    <div class="form-group">
+                        {{ form_widget(f.objet_mail, {'attr':{'class':'form-control'}} )  }}
+                    </div>
+
+                    <div class="form-group">
+                        {{form_widget(f.Envoyer,{'attr':{'class':'btn btn-outline-primary btn-rounded'}} )  }}
+                    </div>
+
+                    {{ form_end(f)}}
+
+                </div>
+
+            </div>
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="http://galaxyanalytics.net/demos/handyman/js/jquery-2.2.0.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/js/bootstrap.min.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/js/gmaps.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/js/google-map.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/js/jquery.form.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/js/jquery.validate.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/js/contact.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/vendors/isotope/isotope.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/vendors/owl-carousel/owl.carousel.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/vendors/counterup/jquery.counterup.min.js"></script>
+<script src="http://galaxyanalytics.net/demos/handyman/vendors/waypoints/waypoints.min.js"></script>
+
+<script src="http://galaxyanalytics.net/demos/handyman/js/theme.js"></script>
+{% endblock %}

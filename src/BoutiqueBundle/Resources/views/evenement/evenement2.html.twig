@@ -1,0 +1,62 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+
+<!--Page Cover-->
+<section class="row page-cover">
+
+</section>
+
+<!--left-sideber-->
+<section class="row sectpad working-area">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-5">
+                <div class="row gallery-area">
+                    <div class="gallery-single">
+                        <img src="{{ asset('Uploads/images/' ~ evenement.image ) }}" width="350" height="250">
+                    </div>
+
+                </div>
+            </div>
+            <div class="col-sm-7 work-details">
+                <div class="work-title">
+                    <h2>{{ evenement.intitulee_ev }}</h2>
+                </div>
+                <div class="project-description">
+                    <h4><a href="http://galaxyanalytics.net/demos/handyman/single-project.html">Description de l'événement</a></h4>
+                    <p>{{ evenement.description_ev }}</p>
+                </div>
+                <div class=" row m0 project">
+                    <div class="date pull-left">
+                        <h4 ><a href="http://galaxyanalytics.net/demos/handyman/single-project.html">Date de l'événement</a></h4>
+                        <p>{{ evenement.date_ev|date('d/m/yy--h:m') }}</p>
+                        <h4 ><a href="http://galaxyanalytics.net/demos/handyman/single-project.html">Adresse de l'événement</a></h4>
+                        <p>{{ evenement.adresse_ev }}</p>
+                    </div>
+                    <div class="category pull-left">
+                        <h4><a href="http://galaxyanalytics.net/demos/handyman/single-project.html">Categorie</a></h4>
+                        <p>{{ evenement.categorie.intitulee_cat }}</p>
+                    </div>
+                </div>
+
+                <form class="tg-themeform" action="{{ path('evenement_evenement_participer',{'id':evenement.id_ev}) }}">
+                    <button type="submit" class="tg-btn" >Participer</button>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://galaxyanalytics.net/demos/handyman/js/jquery-2.2.0.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/js/bootstrap.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/isotope/isotope.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/waypoints/waypoints.min.js"></script>
+
+
+    <script src="http://galaxyanalytics.net/demos/handyman/js/theme.js"></script>
+{% endblock %}

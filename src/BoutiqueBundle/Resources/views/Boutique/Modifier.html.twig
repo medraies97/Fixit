@@ -1,0 +1,116 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <!-- BEGIN: .main-content -->
+    <header class="page-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 col-12">
+                    <div class="page-title">
+                        <h3>Ajouter Un Outil</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-content">
+        <div class="row gutters">
+            <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+
+
+                <!-- Card starts -->
+                <div class="card">
+                    <div class="card-body">
+
+                        <!--*************************
+                        *************************
+                        *************************
+                         Contact Form Start
+                        *************************
+                        *************************
+                        *************************-->
+
+
+
+                        <!-- Row start -->
+                        <div class="row justify-content-center gutters">
+                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+
+                                <div class="form-block">
+                                    <div class="form-block-header">
+                                        <h5>Ajout d'un outil</h5>
+                                        <h6>Vous devez remplir les champs ci dessous pour L'ID: {{ ev.id }}</h6>
+                                    </div>
+                                    <div class="form-block-body">
+                                        <form METHOD="POST">
+
+                                            <div class="form-group">
+                                                <input type="text" name="libelle" value="{{ ev.libelle }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="description" value="{{ ev.description }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="prix" value="{{ ev.prix }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="remise" value="{{ ev.remise }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="quantiteDispo" value="{{ ev.quantiteDispo }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <input type="text" name="marque" value="{{ ev.marque }}">
+                                            </div>
+                                            <div class="form-group">
+                                                <h6>Catégorie:</h6>
+                                                <select name="categorie" >
+
+                                                    {% for c in cat  %}
+
+                                                        {% if c.id == ev.categorie.id %}
+
+                                                            <option value={{ c.id }} selected>{{ c.libelle }}</option>
+
+                                                        {% endif %}
+
+                                                        {% if c.id != ev.categorie.id %}
+
+                                                            <option value={{ c.id }} > {{ c.libelle }}</option>
+
+                                                        {% endif %}
+
+                                                    {% endfor %}
+
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <h6>Date de fabtication:</h6>
+                                                <input type="datetime-local" name="dateFabrication" value="{{ ev.dateFabrication | date ('d/m/yy--h:m')}}">   }}
+                                            </div>
+                                            <div class="form-group">
+                                            <td>
+                                                <input type="submit" value="Modifier">
+                                            </td>
+                                            </div>
+                                        </form>
+
+
+
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Card ends -->
+
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

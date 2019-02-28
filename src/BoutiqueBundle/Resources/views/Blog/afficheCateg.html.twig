@@ -1,0 +1,46 @@
+<link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}" />
+
+<!-- Icomoon Icons CSS -->
+<link rel="stylesheet" href="{{ asset('admin/fonts/icomoon/icomoon.css')}}" />
+
+<!-- Master CSS -->
+<link rel="stylesheet" href="{{ asset('admin/css/main.css')}}" />
+
+<!--
+    **********************
+    **********************
+    Add Optional CSS files below
+    **********************
+    **********************
+-->
+
+<!-- Data Tables CSS -->
+<link rel="stylesheet" href="{{ asset('admin/vendor/datatables/dataTables.bs4.css')}}" />
+<link rel="stylesheet" href="{{ asset('admin/vendor/datatables/dataTables.bs4-custom.css')}}" />
+<div class="card">
+    <div class="card-header">Liste des Categories</div>
+    <div class="card-body">
+        <table id="basicExample" class="table table-bordered">
+            <thead>
+            <tr>
+                <th>Categorie</th>
+
+
+            </tr>
+            </thead>
+            <tbody>
+            {% for c in categ %}
+
+
+                    <td>{{ c.NomCategorie }}</td>
+
+
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <li>   <a href="{{ path('Affiche_Blog') }}" > Back to blog </a></li>
+    </div>
+</div>
+
+<!-- Row ends -->

@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="main-content">
+
+
+    {{ form_start(f)}}
+
+<tr>
+    <td> <h4>Destination de l'Avertissement:</h4>  <input name="id" type="text" value="{{ username }}"> </td>
+
+    <td>  <h4>Objet Avertissement:</h4>{{ form_widget(f.objetAvertissement,{'attr':{'class':'form-control'}}) }} </td>
+
+    <td> <h4>Description de l'Avertissement:</h4>  {{ form_widget(f.descAvertissement,{'attr':{'class':'form-control'}}) }} </td>
+
+
+
+
+
+
+
+</tr>
+</div>
+{{ form_end(f)}}
+
+
+{% endblock %}

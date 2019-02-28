@@ -1,0 +1,34 @@
+{% extends 'base.html.twig' %}
+{% block content %}
+    {{ form_start(f) }}
+
+    <div class="card">
+        <div class="card-header">Forms</div>
+        <div class="card-body">
+
+            <div class="alert alert-primary" role="alert">Ajouter un service</div>
+
+
+            <div class="row gutters">
+                <div class="col-xl-4 col-lg col-md-4 col-sm-4 col-12">
+
+                    <div class="form-group">
+                        <label for="example">Nom de service</label>
+                        {{ form_widget(f.NomService , { 'attr': {'class': 'form-control'} })  }}
+                        <label for="example">prix par heure</label>
+                        {{ form_widget(f.prixparheure , { 'attr': {'class': 'form-control'} })  }}
+
+                        <label for="example">ajouter une description</label>
+                        {{ form_widget(f.description , { 'attr': {'class': 'form-control'} })  }}
+                    </div>
+                    <input type="submit" value="envoyer" class="btn btn-primary btn-sm" />
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+    {{ form_end(f) }}
+    </div>
+{% endblock %}

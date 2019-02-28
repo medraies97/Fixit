@@ -1,0 +1,140 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <!-- Enter change here ya ta7foun  -->
+    <div class="main-content">
+
+    <div class=espacee"><br><br></div>
+    <section style="background-color: white">
+    <div class="container">
+        <!-- h3 style="margin-left: 450px;font-weight: bold">Liste des Réclamation</h3 -->
+        <div id="elzina">
+            {% for reclamation in Rec %}
+                <br><b class="ca">objet de la réclamation: </b>
+                <input class="tki10" type="text" value="{{ reclamation.objetReclamation }}">
+                <br>
+                <br><b class="ca">Contenu de la réclamation: </b>
+                <input class="tki" type="Textarea" value="{{ reclamation.descReclamation }}">
+                <br>
+                <br><b class="ca">Status: </b>{{ reclamation.statusReclamation }}<br>
+                <br><b class="ca">Date d'envoi: </b>{{ reclamation.dateReclamation }}<br>
+            {% endfor %}
+            <div id="zoneee">
+                <br><input type="button" id="show" value="Repondre" style="; width: 350px; color: #B94A00;" /></div>
+        </div>
+
+    </div>
+    <div class=espacee"><br><br></div>
+    <div id="zonee" style="margin-left: 250px">
+        <form action="repRecOuvrier" method="GET">
+            <br>
+            <input name="idReclamation" style="display: none;" type="text" value="{{ idReclamation }}"><br>
+            <b class="ca">Votre Réponse :</b>
+            <textarea class="tki"  name="reponse"></textarea><br>
+            <input class="btnsave" type="submit" value="Envoyer reponse">
+
+        </form>
+    </div>
+    </section>
+    <div class=espacee"><br><br></div>
+    <script type="text/javascript" src="{{ asset('admin/js/jquery-3.2.1.js') }}"></script>
+    <script>
+        $(document).ready(function(){
+            $("#show").click(function(){
+                $("#zonee").show();
+                $("#zoneee").hide();
+            });
+        });
+
+        function repo() {
+            var InputText = window.document.reponse.value;
+            alert(InputText);
+        }
+    </script>
+    <style>
+        #zonee{
+            margin-left: 150px;
+            display: none;
+        }
+        #elzina{
+            margin-left: 120px;
+        }
+        .ca{
+            color: #2baa5c;
+        }
+        .btnresate{
+            width: 300px;
+            height: 43px;
+            background-color: #5eb5e0;
+            margin-left: 100px;
+        }
+        .btnsave{
+            width: 300px;
+            height: 43px;
+            background-color: #ec971f;
+            margin-left: 200px;
+        }
+        .btnsave{
+            width: 300px;
+            height: 43px;
+            background-color: lightgrey;
+            margin-left: 200px;
+        }
+        .tki10{
+            width: 800px;
+            height: 43px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .tki{
+            width: 800px;
+            height: 100px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+        .sell{
+            width: 402px;
+            height: 43px;
+            display: block;
+            padding: 6px 12px;
+            font-size: 14px;
+            line-height: 1.42857143;
+            color: #555;
+            background-color: #fff;
+            background-image: url("{{ asset('Etudiant/images/imgmsg.png') }}");
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+            -webkit-transition: border-color ease-in-out .15s, -webkit-box-shadow ease-in-out .15s;
+            -o-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+            transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+        }
+    </style>
+
+    </div>
+
+    <!-- end block ya 5arya -->
+{% endblock %}

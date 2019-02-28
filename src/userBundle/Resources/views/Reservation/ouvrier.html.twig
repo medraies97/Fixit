@@ -1,0 +1,31 @@
+{% extends 'baseClient.html.twig' %}
+{% block content %}
+    <section class="row page-cover">
+        <div class="container">
+            <div class="row m0">
+                <h2>Shop Page</h2>
+                <ol class="breadcrumb">
+                    <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Home</a></li>
+                    <li class="active">Shop Page</li>
+                </ol>
+            </div>
+        </div>
+    </section>
+
+                <div class="row widget widget-categories">
+                    <h4 class="widget-title">Categories</h4>
+                    <div class="row widget-inner">
+                        <ul class="nav categories">
+                            <li><a href="{{ path('home_ListeReservation')}}"><i class="fa fa-angle-right"></i>afficher les reservations</a></li>
+                            <li><a href="{{ path('home_accepter')}}"><i class="fa fa-angle-right"></i>les reservations acceptés</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>reclamation</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>calendrier</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>livraison</a></li>
+                            <li><a href="#"><i class="fa fa-angle-right"></i>evenement</a></li>
+                        </ul>
+                    </div>
+                </div> <!--Categories-->
+
+
+
+{% endblock %}

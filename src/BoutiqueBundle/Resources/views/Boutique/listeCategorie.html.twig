@@ -1,0 +1,57 @@
+{% extends "base.html.twig" %}
+
+{% block content %}
+
+    <div class="main-content">
+
+    <div id="content-header">
+        <h1>Tableau des Catégories <h6> (Si vous voulez ajouter une autre catégorie , cliquez sur "Ajouter" )</h6> <a  class="btn btn-outline-success btn-rounded" href="{{ path('boutique_homepage_ajouter_categorie') }}">Ajouter </a> </h1>
+    </div>
+    <div class="container-fluid">
+        <hr>
+        <div class="row-fluid">
+            <div >
+
+
+
+                <div class="widget-box">
+                    <div class="widget-content nopadding">
+
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <tr>
+
+                                    <th style="color: #0e90d2">#ID</th>
+                                    <th style="color: #0e90d2">Nom</th>
+                                    <th style="color: #0e90d2">Description</th>
+                                    <th style="color: #0e90d2">Type</th>
+
+                                    <th>Modifier</th>
+                                    <th>Supprimer</th>
+                                </tr>
+
+                                <tbody>
+
+                                {% for pr in ev %}
+                                    <tr>
+
+                                        <td>{{ pr.id }}</td>
+                                        <td>{{ pr.libelle }}</td>
+                                        <td>{{ pr.description }}</td>
+                                        <td>{{ pr.type }}</td>
+
+
+                                        <td><a href="{{ path('boutique_homepage_modifier_categorie',{'id':pr.id}) }}" class="badge badge-info">Modifier</a></td>
+                                        <td><a class="badge badge-danger" href="{{ path('boutique_homepage_supprimer_categorie',{'id':pr.id}) }}" >Supprimer</a></td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

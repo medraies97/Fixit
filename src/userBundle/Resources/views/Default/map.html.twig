@@ -1,0 +1,94 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+    <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+        <meta charset="utf-8">
+        <title>Simple Markers</title>
+        <style>
+            /* Always set the map height explicitly to define the size of the div
+             * element that contains the map. */
+            #map {
+                height: 90%;
+                margin: 60px;
+                padding: 60px;
+            }
+            /* Optional: Makes the sample page fill the window. */
+            html, body {
+                height: 100%;
+
+            }
+        </style>
+    </head>
+    <body>
+    <input type="hidden"value={{ x }} id="x">
+    <input type="hidden"value={{ y }} id="y">
+    <header class="page-header">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+                    <div class="page-title">
+                        <h3>Votre prochaine Livraison</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- END: .page-header -->
+
+
+
+
+    <!-- BEGIN: .main-content -->
+    <div id="map" >
+
+        <!---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        Placeholder for Page Content
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        ---------------------------
+        --------------------------->
+
+    </div>
+
+    <script>
+
+        function initMap() {
+            var x=$("#x").val();
+            var y=$("#y").val();
+
+            var myLatLng = {lat:36.89999040000001, lng:10.183505};
+
+
+
+
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 4,
+                center: myLatLng
+            });
+
+            var marker = new google.maps.Marker({
+                position: myLatLng,
+                map: map,
+                title: 'Hello World!'
+            });
+        }
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA_plICdU9_2GNxEmmWj0g-MXKT-j0vRH4&callback=initMap">
+    </script>
+    </body>
+
+
+{% endblock %}

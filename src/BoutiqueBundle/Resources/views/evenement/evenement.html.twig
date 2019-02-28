@@ -1,0 +1,113 @@
+{% extends 'baseClient.html.twig' %}
+
+{% block content %}
+<!--Page Cover-->
+<section class="row page-cover">
+    <div class="container">
+        <div class="row m0">
+            <h2>événements</h2>
+            <ol class="breadcrumb">
+                <li><a href="http://galaxyanalytics.net/demos/handyman/index.html">Acceuil</a></li>
+                <li class="active">Evénement</li>
+            </ol>
+        </div>
+    </div>
+</section>
+
+<!--our project-->
+<section class="row sectpad">
+    <div class="container">
+        <div class="row m0 section_header projects-title">
+            <h2>Nos événements</h2>
+            <h5>We build Amazing Websites</h5>
+            <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem.</p>
+        </div>
+    </div>
+</section>
+
+<!--project profile-->
+<section class="row project2-area">
+    <div class="container">
+        <div class="row m0 filter_row">
+            <ul class="nav project_filter" id="project_filter2">
+                <li class="active" data-filter="*">All</li>
+                <li data-filter=".Affaire">Affaire</li>
+                <li data-filter=".Certification">Certification</li>
+                <li data-filter=".Formation">Formation</li>
+                <li data-filter=".Promotion">Promotion</li>
+
+            </ul>
+        </div>
+        <div class="row projects2" id="projects2">
+            {% for v in evenement %}
+            <div class="col-sm-4 project {{ v.categorie.intitulee_cat }}">
+                <div class="item">
+                    <a href="{{ path('evenement_evenement1',{'id_ev': v.id_ev}) }}" >
+                        <img src="{{ asset('Uploads/images/' ~ v.image ) }}" width="350px" height="250px">
+                        <div class="image_opacity"></div>
+                    </a>
+                </div>
+                <a href="http://galaxyanalytics.net/demos/handyman/single-project.html"><h4>{{ v.intitulee_ev }}</h4></a>
+                <p>{{ v.description_ev }}</p>
+                <a href="http://galaxyanalytics.net/demos/handyman/single-project.html">Read More<i class="fa fa-long-arrow-right read"></i></a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Clients -->
+<section class="row sectpad clients">
+    <div class="container">
+        <div class="row m0 section_header">
+            <h2>Nos Clients</h2>
+
+        </div>
+        <div class="row clients-logos">
+            <div class="col-md-2 col-sm-3 col-xs-4 client">
+                <div class="row m0 inner-logo">
+                    <img src="{{ asset('Uploads/images/l1.jpg') }} " width="150" height="150" >
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4 client">
+                <div class="row m0 inner-logo">
+                    <img src="{{ asset('Uploads/images/l2.png') }}"width="150" height="150" >
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4 client">
+                <div class="row m0 inner-logo">
+                    <img src="{{ asset('Uploads/images/l4.png') }}"width="130" height="130" >
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4 client">
+                <div class="row m0 inner-logo">
+                    <img src="{{ asset('Uploads/images/l5.png') }}" width="100" height="100" >
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4 client">
+                <div class="row m0 inner-logo">
+                    <img src="{{ asset('Uploads/images/l3.png') }}"width="100" height="100" >
+                </div>
+            </div>
+            <div class="col-md-2 col-sm-3 col-xs-4 client">
+                <div class="row m0 inner-logo">
+                    <img src="{{ asset('Uploads/images/l6.png') }}" width="130" height="100">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="http://galaxyanalytics.net/demos/handyman/js/jquery-2.2.0.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/js/bootstrap.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/imagesloaded/imagesloaded.pkgd.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/isotope/isotope.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/owl-carousel/owl.carousel.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/counterup/jquery.counterup.min.js"></script>
+    <script src="http://galaxyanalytics.net/demos/handyman/vendors/waypoints/waypoints.min.js"></script>
+
+
+    <script src="http://galaxyanalytics.net/demos/handyman/js/theme.js"></script>
+
+{% endblock %}

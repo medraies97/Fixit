@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="main-content">
+{{ form_start(f , { 'attr': {'class': 'row gutters'}} )}}
+<div class="main-content">
+<table class="table table-bordered sm m-0">
+
+
+    <tr> <th>Nom Categorie</th>   <td> {{ form_widget(f.nomCategorie , { 'attr': {'class': 'form-control form-control form-control-sm'} }) }} </td>
+     <td>   <button type="submit" class="btn btn-info btn-sm">
+                 <i class="icon-plus2"></i>   </button>
+
+
+
+
+
+     </td></tr>
+
+</table>
+
+    {{ form_end(f) }}
+</div>
+</div>
+{% endblock %}
+
+
+
+
+

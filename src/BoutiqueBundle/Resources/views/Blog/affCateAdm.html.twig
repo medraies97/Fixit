@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+<div class="row widget widget-categories">
+    <h4 class="widget-title">Categories</h4>
+    <div class="row widget-inner">
+        <ul class="nav categories">
+
+            {% for c in categ %}
+                <li><a href="#"><i class="fa fa-angle-right"></i> {{ c.NomCategorie }} </a></li>
+            {%  endfor %}
+            <a href="{{ path('Affiche_Blog') }}" > Back to blog </a>
+
+        </ul>
+    </div>
+</div>
+
+{% endblock %}

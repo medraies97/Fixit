@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="{{ asset('admin/css/bootstrap.min.css') }}" />
+
+<!-- Icomoon Icons CSS -->
+<link rel="stylesheet" href="{{ asset('admin/fonts/icomoon/icomoon.css')}}" />
+
+<!-- Master CSS -->
+<link rel="stylesheet" href="{{ asset('admin/css/main.css')}}" />
+
+<!--
+    **********************
+    **********************
+    Add Optional CSS files below
+    **********************
+    **********************
+-->
+
+<!-- Data Tables CSS -->
+<link rel="stylesheet" href="{{ asset('admin/vendor/datatables/dataTables.bs4.css')}}" />
+<link rel="stylesheet" href="{{ asset('admin/vendor/datatables/dataTables.bs4-custom.css')}}" />
+
+<  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+    function rechercher() {
+       for(var i=0;i<20;i++){
+           if($('#cat-'+i).text().toLowerCase().includes( $('#search').val().toLowerCase())){
+               $('#'+i).show();
+           }
+
+           else{
+               $('#'+i).hide();
+           }
+       }
+
+    }
+
+</script>
+<div>
+    <input type="search" class="form-control form-control-sm selectpicker" placeholder="" aria-controls="basicExample" id="search" onkeyup="rechercher()">
+    <i class="icon-search"></i>
+</div>
+
+<div class="card">
+    <div class="card-header">Basic Datatable</div>
+<div class="card-body">
+    <table id="basicExample" class="table table-bordered">
+        <thead>
+        <tr>
+<th>Categorie</th>
+<th>Nom Article</th>
+<th>Contenu </th>
+<th>date creation</th>
+<th>photo</th>
+
+</tr>
+</thead>
+<tbody>
+{% for  article in articles %}
+    <tr id="{{ article.id }}">
+        <td id="cat-{{ article.id }}">{{ article.CategArt.nomCategorie }}</td>
+        <td>{{ article.nomArticle }}</td>
+        <td>{{ article.contenuArticle }}</td>
+        <td>{{ article.dateCreationArticle | date('Y-m-d H:i:s')}}</td>
+        <td><img src="{{asset('uploads/images/' ~ article.photo) }}"width="50" height="50"></td>
+
+    </tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div>
+
+<!-- Row ends -->
