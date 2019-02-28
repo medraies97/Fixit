@@ -358,7 +358,7 @@ livreur_ajouter_livreur:
     path:     /admin/ajouterLivreur
     defaults: { _controller: userBundle:Livreur:ajouterLivreur }
 livreur_supprimer_livreur:
-    path:     /admin/supprimer/{id}
+    path:     /admin/supp/{id}
     defaults: { _controller: userBundle:Livreur:supprimerLivreur}
 esprit_parc_updateLivreur:
     path:     /admin/updateLivreur/{id}
@@ -367,7 +367,7 @@ esprit_parc_trouverLivreur:
     path:     /trouverLivreur
     defaults: { _controller: userBundle:Livreur:trouverLivreur}
 vechicule_list:
-    path:     /listVechicule
+    path:     /admin/listVechicule
     defaults: { _controller: userBundle:Vechicule:VechiculeList }
 vechicule_ajouter:
     path:     /admin/ajouterVechicule
@@ -376,7 +376,7 @@ vechicule_update:
     path:     /admin/updateVechicule/{id}
     defaults: { _controller: userBundle:Vechicule:updatevechicule}
 vechicule_delete:
-    path:     /admin/delete/{ref}
+    path:     /admin/supp/{ref}
     defaults: { _controller: userBundle:Vechicule:deleteVechicule}
 trouver_livreur:
     path:     /trouverLivreur/{x}/{y}
